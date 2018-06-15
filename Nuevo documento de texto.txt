@@ -1,0 +1,28 @@
+1)*El vector es estatico.
+
+2)int* vec;
+vec= malloc(sizeof(int*)*3);
+en la pila(Stack) se guarda en una direccion de memoria el nombre de Vec, 
+y en el Heap se guardan los demas elementos.
+
+se puede agrandar el espacio en el Heap con un Realloc.
+Si no hay lugar en el proximo elemento, levanta todos los elementos
+y los posiciona en otro lugar(cambia la direccion de memoria y libera las anteriores), 
+si no encuentra memoria devuelve NULL.
+
+3)Hibrido.
+int* vec[3];
+en la pila(Stack): el vector, se guardan las direcciones de memoria de los elementos 
+del Heap.
+y en el Heap: guarda la direccion de memoria de elementos.
+ventajas:No se necesita memoria consecutiva, en donde encuentre espacio va a guardar el valor.
+desventajas:no se puede hacer un realloc( el espacio de memoria sigue siendo estatico).
+
+4) int ** vec;
+vec=(int**)malloc(sizeof(int*)*3);// castear el malloc
+en la pila(Stack): Un Puntero a Vec(guarda la direccion de memoria del primer elemento).
+y en el Heap: Se crea un Array de punteros(cada elemento tiene una direccion de memoria).
+en el heap se hace un malloc del primer elemento del Heap y en su primer elemento 
+se guarda la direccion de memoria del indice del puntero a puntero.
+ventajas: se puede hacer un realloc den primer elemento del Heap.
+en un soap se cambian las direcciones de memoria en el heap , los de puntero a puntero no se mueven.
