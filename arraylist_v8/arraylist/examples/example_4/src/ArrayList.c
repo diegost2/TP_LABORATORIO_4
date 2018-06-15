@@ -223,7 +223,7 @@ int al_set(ArrayList* this, int index,void* pElement) // pisa/reemplaza un dato
  * \return int Return (-1) if Error [pList is NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int al_remove(ArrayList* this,int index) //elimina en elemento del array
+int al_remove(ArrayList* this, int index) //elimina en elemento del array
 {
     int returnAux = -1;
 
@@ -249,22 +249,22 @@ int al_remove(ArrayList* this,int index) //elimina en elemento del array
  */
 int al_clear(ArrayList* this)
 {
+
     int returnAux = -1;
     int i;
-    void** aux= NULL;
-    if(this!=NULL)
+    //int aux;
+    if(this != NULL)
     {
 
         for(i=0;i<=this->size;i++)
-        {
-            aux=al_get(this,i);
-
-
-            if(aux!=NULL)
             {
-                *(this->pElements+i)=al_remove(this, i);
+                //if(aux!=NULL)
+                //{
+
+                    al_remove(this,i);
+
+               // }
             }
-        }
         returnAux=0;
     }
 
