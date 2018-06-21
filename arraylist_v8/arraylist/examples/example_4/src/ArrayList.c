@@ -132,7 +132,6 @@ int al_len(ArrayList* this)
     {
         returnAux=this->size;
     }
-
     return returnAux;
 }
 
@@ -261,7 +260,7 @@ int al_clear(ArrayList* this)
                 //if(aux!=NULL)
                 //{
 
-                    al_remove(this,i);
+                al_remove(this,i);
 
                // }
             }
